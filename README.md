@@ -64,4 +64,23 @@ extension NetworkResult: CaseEquatable {
     enum RawCase {
         case success
         case failure
+        case cancelled
+    }
+
+    static func == (lhs: NetworkResult, rhs: RawCase) -> Bool {
+        switch lhs {
+        case .success:   return rhs == .success
+        case .failure:   return rhs == .failure
+        case .cancelled: return rhs == .cancelled
+        }
+    }
+}
 ```
+
+## Contributing
+
+Contributions welcome! Please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE.txt](LICENSE.txt) for details.
